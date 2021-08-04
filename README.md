@@ -2,7 +2,7 @@
 
 ## Preview
 
-![Qtile](/images/qtile-preview.png "Qtile Preview")
+![Qtile](https://github.com/Rizqirazkafi/dotfiles/blob/main/images/qtile-preview.jpg)
 
 1. Qtile
 2. vimrc
