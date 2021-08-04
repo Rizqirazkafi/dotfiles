@@ -4,3 +4,4 @@
 2. vimrc
 3. bashrc
 4. zshrc
+5. Alacritty
