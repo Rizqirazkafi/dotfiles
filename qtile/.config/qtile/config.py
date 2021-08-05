@@ -349,11 +349,23 @@ widget_defaults = init_widgets_defaults()
 def init_widgets_list():
     prompt = "{0}@{1}: ".format(os.environ["USER"], socket.gethostname())
     widgets_list = [
-               widget.GroupBox(font="FontAwesome",
-                        fontsize = 16,
-                        margin_y = -1,
-                        margin_x = 0,
-                        padding_y = 6,
+            widget.Image(
+                filename = home + "/.config/qtile/image/py-icon.png",
+                scale = True,
+                margin = 1,
+                ),
+            widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors[2],
+                        background = colors[1]
+                        ),
+
+            widget.GroupBox(font="FontAwesome",
+                        fontsize = 18,
+                        margin_y =0,
+                        margin_x = 1,
+                        padding_y = 0,
                         padding_x = 5,
                         borderwidth = 0,
                         disable_drag = True,
@@ -383,13 +395,13 @@ def init_widgets_list():
                         background = colors[1]
                         ),
                widget.WindowName(font="Noto Sans",
-                        fontsize = 12,
+                        fontsize = 14,
                         foreground = colors[5],
                         background = colors[1],
                         ),
                widget.Net(
                         font="Noto Sans",
-                        fontsize=12,
+                        fontsize=14,
                         interface="wlp1s0",
                         foreground=colors[2],
                         background=colors[1],
@@ -455,7 +467,7 @@ def init_widgets_list():
                widget.Battery(
                         font="Noto Sans",
                         update_interval = 10,
-                        fontsize = 12,
+                        fontsize = 14,
                         foreground = colors[5],
                         background = colors[1],
                         ),
@@ -493,7 +505,7 @@ def init_widgets_list():
                         ),
                widget.Memory(
                         font="Noto Sans",
-                        format = '{MemUsed}M/{MemTotal}M',
+                        format = '{MemUsed: .0f}M/{MemTotal: .0f}M',
                         update_interval = 1,
                         fontsize = 12,
                         foreground = colors[5],
@@ -505,6 +517,15 @@ def init_widgets_list():
                         foreground = colors[2],
                         background = colors[1]
                         ),
+               widget.Volume(
+                       ),
+               widget.Sep(
+                        linewidth = 1,
+                        padding = 10,
+                        foreground = colors[2],
+                        background = colors[1]
+                        ),
+
                widget.TextBox(
                         font="FontAwesome",
                         text="  ",
@@ -516,7 +537,7 @@ def init_widgets_list():
                widget.Clock(
                         foreground = colors[5],
                         background = colors[1],
-                        fontsize = 12,
+                        fontsize = 14,
                         format="%Y-%m-%d %H:%M"
                         ),
                widget.Sep(
@@ -549,8 +570,8 @@ widgets_screen2 = init_widgets_screen2()
 
 
 def init_screens():
-    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=26)),
-            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=26))]
+    return [Screen(top=bar.Bar(widgets=init_widgets_screen1(), size=28)),
+            Screen(top=bar.Bar(widgets=init_widgets_screen2(), size=28))]
 screens = init_screens()
 
 
