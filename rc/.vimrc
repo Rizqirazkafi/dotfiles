@@ -17,6 +17,10 @@ set incsearch
 set t_Co=256
 call plug#begin('~/.vim/plugged')
 
+Plug 'suan/vim-instant-markdown', {'rtp': 'after'}
+Plug 'frazrepo/vim-rainbow'
+Plug 'ap/vim-css-color'
+Plug 'vim-python/python-syntax'
 Plug 'joshdick/onedark.vim'
 Plug 'vim-scripts/taglist.vim'
 Plug 'mbbill/undotree'
