@@ -1,3 +1,5 @@
+if has('python3')
+endif
 syntax on
 set encoding=UTF-8
 
@@ -17,20 +19,19 @@ set incsearch
 set t_Co=256
 call plug#begin('~/.vim/plugged')
 
-Plug 'suan/vim-instant-markdown', {'rtp': 'after'}
-Plug 'frazrepo/vim-rainbow'
-Plug 'ap/vim-css-color'
-Plug 'vim-python/python-syntax'
-Plug 'joshdick/onedark.vim'
-Plug 'vim-scripts/taglist.vim'
-Plug 'mbbill/undotree'
-Plug 'scrooloose/nerdtree'
-Plug 'lyuts/vim-rtags'
-Plug 'ryanoasis/vim-devicons'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'vifm/vifm.vim'
-Plug 'valloric/youcompleteme'
+Plug 'suan/vim-instant-markdown', {'rtp': 'after'}  "Markdown Preview
+Plug 'frazrepo/vim-rainbow'                         
+Plug 'ap/vim-css-color'                             "Color Preview for CSS 
+Plug 'vim-python/python-syntax'                     "Python Sytnax Highlighting 
+Plug 'joshdick/onedark.vim'                         "Onedark colorscheme
+Plug 'vim-scripts/taglist.vim'                      "Tag support for various programming language
+Plug 'mbbill/undotree'                              "Undo tree for showing file history
+Plug 'scrooloose/nerdtree'                          "NERDTree file manager
+Plug 'lyuts/vim-rtags'                              "C++ Nav Keybindings 
+Plug 'ryanoasis/vim-devicons'                       "Icon for vim and NERDTree 
+Plug 'vim-airline/vim-airline'                      "Airline
+Plug 'vim-airline/vim-airline-themes'               "Airline colorscheme
+Plug 'valloric/youcompleteme'                       "Auto Complete for various programming language 
 
 call plug#end()
 
@@ -54,11 +55,6 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 let NERDTreeShowHidden=1
 let g:NERDTreeWinSize=38
 set splitbelow splitright
-map <Leader>vv :Vifm<CR>
-map <Leader>vs :VsplitVifm<CR> 
-map <Leader>sp :SplitVifm<CR> 
-map <Leader>dv :DiffVifm<CR> 
-map <Leader>tv :TabVifm<CR>
 
 " Remap splits navigation to just CTRL + hjkl 
 nnoremap <C-h> <C-w>h 
@@ -76,4 +72,11 @@ nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <silent> <leader>gd :YcmCompeleter GoTo<CR>
 nnoremap <silent> <leader>gf :YcmCompeleter FixIt<CR>
 
-
+"Python config for YouCompleteMe
+let g:ycm_python_interpreter_path = ''
+let g:ycm_python_sys_path = []
+let g:ycm_extra_conf_vim_data = [
+  \  'g:ycm_python_interpreter_path',
+  \  'g:ycm_python_sys_path'
+  \]
+let g:ycm_global_ycm_extra_conf = '~/.global_extra_conf.py'
