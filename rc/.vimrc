@@ -2,13 +2,12 @@ if has('python3')
 endif
 syntax on
 set encoding=UTF-8
-
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set nu
+set number relativenumber
 set smartcase
 set noswapfile
 set nobackup
@@ -16,7 +15,7 @@ set nowrap
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
-set t_Co=256
+set termguicolors
 call plug#begin('~/.vim/plugged')
 
 Plug 'suan/vim-instant-markdown', {'rtp': 'after'}  "Markdown Preview
@@ -32,7 +31,6 @@ Plug 'ryanoasis/vim-devicons'                       "Icon for vim and NERDTree
 Plug 'vim-airline/vim-airline'                      "Airline
 Plug 'vim-airline/vim-airline-themes'               "Airline colorscheme
 Plug 'valloric/youcompleteme'                       "Auto Complete for various programming language 
-
 call plug#end()
 
 
