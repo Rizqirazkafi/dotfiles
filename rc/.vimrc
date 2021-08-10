@@ -33,7 +33,7 @@ Plug 'vim-airline/vim-airline-themes'               "Airline colorscheme
 Plug 'valloric/youcompleteme'                       "Auto Complete for various programming language 
 call plug#end()
 
-
+let g:rainbow_active = 1
 let g:lightline = {
             \'colorscheme': 'onedark',
             \}
