@@ -5,6 +5,7 @@ set encoding=UTF-8
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
+set wildmenu
 set expandtab
 set smartindent
 set number relativenumber
@@ -19,11 +20,15 @@ set termguicolors
 call plug#begin('~/.vim/plugged')
 
 Plug 'suan/vim-instant-markdown', {'rtp': 'after'}  "Markdown Preview
+"Plug 'plasticboy/vim-markdown'                      "Markdown Syntax
+Plug 'terroo/vim-auto-markdown'
 Plug 'frazrepo/vim-rainbow'                         
+Plug 'yggdroot/indentline'
 Plug 'ap/vim-css-color'                             "Color Preview for CSS 
 Plug 'vim-python/python-syntax'                     "Python Sytnax Highlighting 
 Plug 'joshdick/onedark.vim'                         "Onedark colorscheme
 Plug 'vim-scripts/taglist.vim'                      "Tag support for various programming language
+"Plug 'SirVer/ultisnips'
 Plug 'mbbill/undotree'                              "Undo tree for showing file history
 Plug 'scrooloose/nerdtree'                          "NERDTree file manager
 Plug 'lyuts/vim-rtags'                              "C++ Nav Keybindings 
@@ -31,6 +36,7 @@ Plug 'ryanoasis/vim-devicons'                       "Icon for vim and NERDTree
 Plug 'vim-airline/vim-airline'                      "Airline
 Plug 'vim-airline/vim-airline-themes'               "Airline colorscheme
 Plug 'valloric/youcompleteme'                       "Auto Complete for various programming language 
+Plug 'townk/vim-autoclose'
 call plug#end()
 
 let g:rainbow_active = 1
@@ -70,6 +76,20 @@ nnoremap <leader>u :UndotreeShow<CR>
 nnoremap <silent> <leader>gd :YcmCompeleter GoTo<CR>
 nnoremap <silent> <leader>gf :YcmCompeleter FixIt<CR>
 
+" Line indent guides
+" Vim
+let g:indentLine_color_term = 239
+
+" GVim
+let g:indentLine_color_gui = '#A4E57E'
+
+" none X terminal
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)
+
+" Background (Vim, GVim)
+let g:indentLine_bgcolor_term = 202
+let g:indentLine_bgcolor_gui = '#FF5F00'
 "Python config for YouCompleteMe
 let g:ycm_python_interpreter_path = ''
 let g:ycm_python_sys_path = []
