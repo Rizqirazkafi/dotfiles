@@ -23,7 +23,7 @@ Plug 'suan/vim-instant-markdown', {'rtp': 'after'}  "Markdown Preview
 "Plug 'plasticboy/vim-markdown'                      "Markdown Syntax
 Plug 'terroo/vim-auto-markdown'
 Plug 'frazrepo/vim-rainbow'                         
-Plug 'yggdroot/indentline'
+"Plug 'yggdroot/indentline'
 Plug 'ap/vim-css-color'                             "Color Preview for CSS 
 Plug 'vim-python/python-syntax'                     "Python Sytnax Highlighting 
 Plug 'joshdick/onedark.vim'                         "Onedark colorscheme
@@ -37,6 +37,8 @@ Plug 'vim-airline/vim-airline'                      "Airline
 Plug 'vim-airline/vim-airline-themes'               "Airline colorscheme
 Plug 'valloric/youcompleteme'                       "Auto Complete for various programming language 
 Plug 'townk/vim-autoclose'
+Plug 'dracula/vim', { 'as': 'dracula' }             "Dracula color scheme
+
 call plug#end()
 
 let g:rainbow_active = 1
@@ -44,11 +46,13 @@ let g:lightline = {
             \'colorscheme': 'onedark',
             \}
 
-colorscheme onedark
+colorscheme dracula
 
 
 let mapleader = " "
 
+highlight LineNr ctermfg=grey ctermbg=white
+highlight LineNr guifg=white
 " NERDTree Keybindings
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>

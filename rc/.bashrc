@@ -13,7 +13,7 @@ esac
 HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
-shopt -s histappend
+#shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
@@ -25,7 +25,7 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -118,3 +118,25 @@ fi
 
 cd ~
 fm6000 -c blue -w
+
+# added by Anaconda3 installer
+# export PATH="/home/rizqirazkafi/anaconda3/bin:$PATH"  # commented out by conda initialize
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/rizqirazkafi/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/rizqirazkafi/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/rizqirazkafi/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/rizqirazkafi/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+# added by Anaconda3 installer
+export PATH="/home/rizqirazkafi/anaconda3/bin:$PATH"

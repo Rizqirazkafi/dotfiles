@@ -301,16 +301,16 @@ for i in groups:
 def init_layout_theme():
     return {"margin":2,
             "border_width":2,
-            "border_focus": "#5e81ac",
-            "border_normal": "#4c566a"
+            "border_focus": "#bd93f9",
+            "border_normal": "#6272a4"
            }
 
 layout_theme = init_layout_theme()
 
 
 layouts = [
-    layout.MonadTall(margin=3, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
-    layout.MonadWide(margin=3, border_width=2, border_focus="#5e81ac", border_normal="#4c566a"),
+    layout.MonadTall(margin=3, border_width=2, border_focus="#bd93f9", border_normal="#4c566a"),
+    layout.MonadWide(margin=3, border_width=2, border_focus="#6272a4", border_normal="#4c566a"),
     layout.Matrix(**layout_theme),
     layout.Bsp(**layout_theme),
     layout.Floating(**layout_theme),
@@ -332,8 +332,20 @@ def init_colors():
             ["#6790eb", "#6790eb"], # color 8
             ["#a9a9a9", "#a9a9a9"]] # color 9
 
+def init_colors_dracula():
+    return [["#282a36", "#282a36"], # color 0
+            ["#282a36", "#282a36"], # color 1
+            ["#c0c5ce", "#c0c5ce"], # color 2
+            ["#ffb86c", "#ffb86c"], # color 3
+            ["#8be9fd", "#8be9fd"], # color 4
+            ["#f8f8f2", "#f8f8f2"], # color 5
+            ["#ff5555", "#ff5555"], # color 6
+            ["#50fa7b", "#50fa7b"], # color 7
+            ["#bd93f9", "#bd93f9"], # color 8
+            ["#6272a4", "#6272a4"], # color 9
+            ["#ff79c6", "#ff79c6"] ] # color 10
 
-colors = init_colors()
+colors = init_colors_dracula()
 
 
 # WIDGETS FOR THE BAR
@@ -357,7 +369,7 @@ def init_widgets_list():
             widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
+                        foreground = colors[8],
                         background = colors[1]
                         ),
 
@@ -369,48 +381,48 @@ def init_widgets_list():
                         padding_x = 5,
                         borderwidth = 0,
                         disable_drag = True,
-                        active = colors[9],
-                        inactive = colors[5],
+                        active = colors[6],
+                        inactive = colors[10],
                         rounded = False,
                         highlight_method = "text",
                         this_current_screen_border = colors[8],
-                        foreground = colors[2],
+                        foreground = colors[8],
                         background = colors[1]
                         ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
+                        foreground = colors[8],
                         background = colors[1]
                         ),
                widget.CurrentLayout(
                         font = "Noto Sans Bold",
-                        foreground = colors[5],
+                        foreground = colors[8],
                         background = colors[1]
                         ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
+                        foreground = colors[8],
                         background = colors[1]
                         ),
                widget.WindowName(font="Noto Sans",
                         fontsize = 14,
-                        foreground = colors[5],
+                        foreground = colors[7],
                         background = colors[1],
                         ),
                widget.Net(
                         font="Noto Sans",
                         fontsize=14,
                         interface="wlp1s0",
-                        foreground=colors[2],
+                        foreground=colors[10],
                         background=colors[1],
                         padding = 0,
                         ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
+                        foreground = colors[8],
                         background = colors[1]
                         ),
                # widget.NetGraph(
@@ -435,7 +447,7 @@ def init_widgets_list():
                #          ),
                # # do not activate in Virtualbox - will break qtile
                widget.ThermalSensor(
-                        foreground = colors[5],
+                        foreground = colors[4],
                         foreground_alert = colors[6],
                         background = colors[1],
                         metric = True,
@@ -446,7 +458,7 @@ def init_widgets_list():
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
+                        foreground = colors[8],
                         background = colors[1]
                         ),
                arcobattery.BatteryIcon(
@@ -461,14 +473,14 @@ def init_widgets_list():
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
+                        foreground = colors[8],
                         background = colors[1]
                         ),
                widget.Battery(
                         font="Noto Sans",
                         update_interval = 10,
                         fontsize = 14,
-                        foreground = colors[5],
+                        foreground = colors[7],
                         background = colors[1],
                         ),
                widget.TextBox(
@@ -481,7 +493,7 @@ def init_widgets_list():
                         ),
                widget.CPUGraph(
                         border_color = colors[2],
-                        fill_color = colors[8],
+                        fill_color = colors[3],
                         graph_color = colors[8],
                         background=colors[1],
                         border_width = 1,
@@ -492,7 +504,7 @@ def init_widgets_list():
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
+                        foreground = colors[8],
                         background = colors[1]
                         ),
                widget.TextBox(
@@ -508,13 +520,13 @@ def init_widgets_list():
                         format = '{MemUsed: .0f}M/{MemTotal: .0f}M',
                         update_interval = 1,
                         fontsize = 12,
-                        foreground = colors[5],
+                        foreground = colors[6],
                         background = colors[1],
                        ),
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
+                        foreground = colors[8],
                         background = colors[1]
                         ),
                widget.Volume(
@@ -522,7 +534,7 @@ def init_widgets_list():
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
+                        foreground = colors[8],
                         background = colors[1]
                         ),
 
@@ -535,7 +547,7 @@ def init_widgets_list():
                         fontsize=16
                         ),
                widget.Clock(
-                        foreground = colors[5],
+                        foreground = colors[10],
                         background = colors[1],
                         fontsize = 14,
                         format="%Y-%m-%d %H:%M"
@@ -543,7 +555,7 @@ def init_widgets_list():
                widget.Sep(
                         linewidth = 1,
                         padding = 10,
-                        foreground = colors[2],
+                        foreground = colors[8],
                         background = colors[1]
                         ),
                widget.Systray(
