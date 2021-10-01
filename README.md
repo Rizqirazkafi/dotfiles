@@ -9,3 +9,6 @@
 3. bashrc
 4. zshrc
 5. Alacritty
+6. BSPWM
+7. sxhkd
+8. polybar
