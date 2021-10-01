@@ -310,6 +310,7 @@ alias bls="betterlockscreen -u /usr/share/backgrounds/arcolinux/"
 #give the list of all installed desktops - xsessions desktops
 alias xd="ls /usr/share/xsessions"
 
+# VIM Aliases
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
 ex ()
@@ -343,8 +344,9 @@ ex ()
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
 # fm6000
-fm6000 -c blue -w
-
+#fm6000 -c blue -w
+# afetch
+afetch
 # reporting tools - install when not installed
 # install neofetch
 # neofetch

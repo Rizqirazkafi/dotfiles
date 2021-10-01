@@ -11,12 +11,14 @@ set smartindent
 set number relativenumber
 set smartcase
 set noswapfile
+set nocompatible
 set nobackup
 set nowrap 
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set termguicolors
+filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 
 Plug 'suan/vim-instant-markdown', {'rtp': 'after'}  "Markdown Preview
