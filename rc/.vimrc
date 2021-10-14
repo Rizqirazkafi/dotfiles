@@ -40,7 +40,7 @@ Plug 'vim-airline/vim-airline-themes'               "Airline colorscheme
 Plug 'valloric/youcompleteme'                       "Auto Complete for various programming language 
 Plug 'townk/vim-autoclose'
 Plug 'dracula/vim', { 'as': 'dracula' }             "Dracula color scheme
-
+"Plug 'neoclide/coc-java'                            "Java autocompletion
 call plug#end()
 
 let g:rainbow_active = 1

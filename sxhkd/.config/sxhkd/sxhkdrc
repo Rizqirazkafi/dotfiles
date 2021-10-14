@@ -17,6 +17,9 @@ super + Escape
 # screenshot
 Print
     scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+
+super + Print
+    xfce4-screenshooter
 #Aplication launcher
 ## Firefox
 super + w
@@ -31,8 +34,10 @@ super + F7
 super + F4
     gimp
 
-ctrl + alt + v
+ctrl + alt + c
     code
+ctrl + alt + v
+    vivaldi-stable
 #
 # bspwm hotkeys
 #
@@ -141,10 +146,14 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+# cycle through layouts
+super + r
+    bsp-layout cycle --layouts tall,monocle,wide
 # volume control
 XF86AudioLowerVolume
 	amixer -q set Master 5%-
-XF86AudioRaiseVolume
+rF86AudioRaiseVolume
 	amixer -q set Master 5%+
 XF86AudioMute
         amixer -q set Master toggle

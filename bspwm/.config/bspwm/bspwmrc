@@ -3,9 +3,11 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 #Autostart
 picom &
+exec --no-startup-id xfsettingsd &
 #killall variety &
 #variety &
-feh --bg-fill -randomize ~/Pictures/wallpaper/ * 
+nitrogen --restore &
+#feh --bg-fill -randomize ~/Pictures/wallpaper/ * 
 nm-applet &
 pamac-tray &
 xfce4-power-manager &
@@ -16,8 +18,8 @@ $HOME/.config/polybar/launch.sh
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 bspc monitor -d I II III IV V 
 
-bspc config border_width         2
-bspc config window_gap          6
+bspc config border_width        4
+bspc config window_gap          3
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true
@@ -36,3 +38,4 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a virtualbox desktop='^3' follow=on
 bspc rule -a rofi state=floating
+bspc rule -a teams desktop='^5' state=floating

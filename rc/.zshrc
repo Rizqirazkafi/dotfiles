@@ -310,6 +310,11 @@ alias bls="betterlockscreen -u /usr/share/backgrounds/arcolinux/"
 #give the list of all installed desktops - xsessions desktops
 alias xd="ls /usr/share/xsessions"
 
+# config files
+alias bsc='vim ~/.config/bspwm/bspwmrc' #bspwm
+alias sxc='vim ~/.config/sxhkd/sxhkdrc' #sxhkd
+alias pbc='vim ~/.config/polybar/config' #polybar
+
 # VIM Aliases
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>

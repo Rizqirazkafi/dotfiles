@@ -44,7 +44,7 @@ yellow = #f1fa8c
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 24
+height = 28
 ;offset-x = 1%
 ;offset-y = 1%
 radius = 0.0
@@ -76,13 +76,13 @@ font-6 = "Roboto:pixelsize=26;2"
 
 modules-left = bspwm xwindow 
 modules-center = kernel 
-modules-right = filesystem pulseaudio xkeyboard memory cpu wlan eth battery temperature  date powermenu 
+modules-right = filesystem pulseaudio memory cpu wlan eth wired-network battery temperature  date powermenu 
 
 separator = |
 
 tray-position = right
 tray-padding= 2
-tray-transparent = true
+tray-transparent = 
 tray-background = ${colors-dracula.background}
 wm-restack = bspwm
 
@@ -101,11 +101,12 @@ eursor-scroll = ns-resize
 
 [module/pacman-updates]
 type = custom/script
-exec = checkupdates | wc -l
+exec = pacman -Qu | wc -l
+;exec = checkupdates | wc -l
 interval = 1000
 label = Updates: %output%
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
+format-foreground = ${colors-dracula.foreground}
+format-background = ${colors-dracula.background}
 format-prefix = " "
 format-prefix-foreground = #ffbb00
 # format-prefix-background = #ffbb00
@@ -284,11 +285,12 @@ label = %percentage_used%%
 [module/wlan]
 type = internal/network
 interface = wlp1s0 
-interval = 3.0
+interval = 2.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = ${colors-dracula.purple}
-label-connected = %essid%
+format=disconnected-underline = ${colors-dracula.red}
+label-connected = %downspeed:9% %upspeed:9%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -301,17 +303,17 @@ ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-foreground = ${colors-dracula.comment}
 
 [module/eth]
 type = internal/network
-interface = enp4s0
+interface = enp3s0f4u1
 interval = 3.0
 
 format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors-dracula.foreground}
-label-connected = %local_ip%
+label-connected = %local_ip% %downspeed:9% %upspeed:9%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -323,7 +325,7 @@ format-disconnected =
 type = internal/date
 interval = 1
 
-date =
+date = " %Y-%m-%d"
 date-alt = " %Y-%m-%d"
 
 time = %H:%M
@@ -476,7 +478,7 @@ margin-bottom = 5
 
 [module/wired-network]
 type = internal/network
-interface = eth1
+interface = enp3s0f4u1
 
 [module/wireless-network]
 type = internal/network
