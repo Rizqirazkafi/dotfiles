@@ -1,5 +1,6 @@
 #! /bin/sh
-
+wmname compiz
+export _JAVA_AWT_WM_NONREPARENTING=1
 pgrep -x sxhkd > /dev/null || sxhkd &
 #Autostart
 picom &
@@ -16,8 +17,9 @@ blueberry-tray &
 $HOME/.config/polybar/launch.sh
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
-bspc monitor -d I II III IV V 
-
+bspc monitor eDP -d I II III IV V 
+bspc monitor HDMI-A-0 -d I II III IV V 
+#for side in top right bottom left; do bspc config ${side}_monocle_padding -10; done
 bspc config border_width        4
 bspc config window_gap          3
 
@@ -34,8 +36,10 @@ bspc rule -a Gimp desktop='^4' state=gapless_monocle follow=on
 bspc rule -a zoom desktop='^5' state=floating 
 bspc rule -a vivaldi-stable desktop='^2' 
 bspc rule -a mplayer2 state=floating
+bspc rule -a apache-netbeans state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a virtualbox desktop='^3' follow=on
 bspc rule -a rofi state=floating
 bspc rule -a teams desktop='^5' state=floating
+bspc rule -a obs desktop='^5' follow=on
