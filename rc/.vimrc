@@ -22,6 +22,8 @@ filetype plugin indent on
 call plug#begin('~/.vim/plugged')
 
 Plug 'suan/vim-instant-markdown', {'rtp': 'after'}  "Markdown Preview
+Plug 'vim-scripts/asmx86_64'                        "ASM Syntax
+Plug 'philj56/vim-asm-indent'                       "ASM Indent
 "Plug 'plasticboy/vim-markdown'                      "Markdown Syntax
 Plug 'terroo/vim-auto-markdown'
 Plug 'frazrepo/vim-rainbow'                         

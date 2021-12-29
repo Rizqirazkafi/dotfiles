@@ -142,6 +142,6 @@ unset __conda_setup
 
 
 # added by Anaconda3 installer
-export PATH="/home/rizqirazkafi/anaconda3/bin:$PATH"
+#export PATH="/home/rizqirazkafi/anaconda3/bin:$PATH"
 export JAVA_HOME="usr/lib/jvm/java-17-openjdk"
 export PATH_TO_FX="usr/lib/jvm/java-17-openjdk/lib"
