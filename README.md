@@ -3,7 +3,7 @@
 ## Preview
 
 ### BSPWM
-![BSPWM](https://github.com/Rizqirazkafi/dotfiles/blob/main/bspwm/.config/bspwm/bspwm-screenshot.jpg)
+![BSPWM](images/bspwm.jpg)
 
 1. Qtile
     > **DO NOT USE THIS CONFIG!!**
@@ -15,3 +15,5 @@
 6. BSPWM
 7. sxhkd
 8. polybar
+9. Rofi
+10.Rofi wifi menu
