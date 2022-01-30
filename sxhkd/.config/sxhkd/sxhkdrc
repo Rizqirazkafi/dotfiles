@@ -10,7 +10,9 @@ super + Return
 super + space
     rofi -show drun
     #dmenu_run
-
+    #rofi -show drun
+super + alt + space
+    rofi -show run 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -31,6 +33,8 @@ super + shift + Return
 super + F7
     virtualbox
 
+super + F8
+    bash /home/$USER/rofi-wifi-menu/rofi-wifi-menu.sh
 super + F4
     gimp
 
@@ -51,7 +55,7 @@ super + alt + {q,r}
 super + {x}
     arcolinux-logout
 # close and kill
-super + {_,shift + }q
+super + q
 	bspc node -{c}
 
 # alternate between the tiled and monocle layout
