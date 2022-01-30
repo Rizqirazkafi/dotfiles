@@ -1,0 +1,86 @@
+//@theme "/usr/share/rofi/themes/Pop-Dark.rasi"
+//@theme "/usr/share/rofi/themes/Pop-Dark.rasi"
+//@theme "/usr/share/rofi/themes/android_notification.rasi"
+
+configuration{
+    modi: "window,drun,run";
+    display-drun: "Application:";
+    display-run: "Application:";
+    drun-display-format: "{icon} {name}";
+    run-display-format: "{icon} {name}";
+    font: "Hack 14";
+    combi-modi: "window,drun,ssh";
+    show-icons: true;
+    icon-theme: "Surfn Papirus Blue";
+}
+
+@theme "/dev/null"
+* {
+  bg: #282a36;
+  bg-alt: #44475a;
+
+  fg: #f8f8f2;
+  fg-alt: #6272a4;
+
+  background-color: @bg;
+  
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+    width: 45%;
+    border: 5px;
+    border-color: #bd93f9;
+}
+
+element {
+  padding: 8 0;
+  text-color: @fg-alt;
+}
+
+element selected {
+  text-color: @fg;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 34;
+}
+
+entry {
+  background-color: @bg-alt;
+  padding: 12;
+  text-color: @fg;
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+listview {
+  padding: 8 12;
+  background-color: @bg;
+  columns: 1;
+  lines: 8;
+}
+
+mainbox {
+  background-color: @bg;
+  children: [inputbar, listview];
+}
+
+prompt {
+  background-color: @bg-alt;
+  enabled: true;
+  padding: 12 0 0 12;
+  text-color: @fg;
+}
+
