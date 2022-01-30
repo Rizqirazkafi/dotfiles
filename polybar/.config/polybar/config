@@ -71,11 +71,11 @@ font-2 = siji:style=Regular:pixelsize=24;2
 font-3 = Font Awesome 5 Free:pixelsize=12;2
 font-4 = Font Awesome 5 Free Solid:pixelsize=12;2
 font-5 = Font Awesome 5 Brands:pixelsize=12;2
-font-6 = "Roboto:pixelsize=26;2" 
+font-6 = Roboto:pixelsize=26;2 
 
 modules-left = bspwm xwindow 
-modules-center =  filesystem pulseaudio memory cpu date wlan battery 
-modules-right = kernel 
+modules-center =  filesystem pulseaudio memory cpu battery 
+modules-right = date kernel 
 
 separator = |
 
@@ -93,8 +93,7 @@ wm-restack = bspwm
 ;scroll-down = bspwm-deskprev
 
 ;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
+;scroll-down = i3wm-wsptotal
 cursor-click = pointer
 eursor-scroll = ns-resize
 
@@ -131,7 +130,7 @@ font-5 = Font Awesome 5 Brands:pixelsize=12;2
 font-6 = "Roboto:pixelsize=26;2" 
 
 modules-left = bspwm xwindow 
-modules-center =  filesystem pulseaudio memory cpu date wlan battery 
+modules-center =  filesystem pulseaudio date battery 
 modules-right = kernel 
 
 separator = |
@@ -336,7 +335,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors-dracula.red}
 format-underline = ${colors-dracula.red}
-label = %gb_used%/%gb_free%
+label = %gb_used%/%gb_total%
 
 [module/wlan]
 type = internal/network
@@ -529,8 +528,8 @@ screenchange-reload = true
 ;pseudo-transparency = false
 
 [global/wm]
-margin-top = 5
-margin-bottom = 5
+margin-top = 0
+margin-bottom = 0
 
 [module/wired-network]
 type = internal/network
