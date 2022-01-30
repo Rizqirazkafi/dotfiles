@@ -98,6 +98,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias bsc='vim ~/.config/bspwm/bspwmrc' #bspwm
 alias sxc='vim ~/.config/sxhkd/sxhkdrc' #sxhkd
 alias pbc='vim ~/.config/polybar/config' #polybar
+# Fix dualboot time
+alias fix_time='sudo timedatectl set-local-rtc 1 --adjust-system-clock && timedatectl'
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
