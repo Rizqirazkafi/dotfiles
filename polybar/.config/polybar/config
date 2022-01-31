@@ -72,10 +72,9 @@ font-3 = Font Awesome 5 Free:pixelsize=12;2
 font-4 = Font Awesome 5 Free Solid:pixelsize=12;2
 font-5 = Font Awesome 5 Brands:pixelsize=12;2
 font-6 = Roboto:pixelsize=26;2 
-
 modules-left = bspwm xwindow 
-modules-center =  filesystem pulseaudio memory cpu battery 
-modules-right = date kernel 
+modules-center = date filesystem pulseaudio battery    
+modules-right = kernel 
 
 separator = |
 
@@ -97,62 +96,6 @@ wm-restack = bspwm
 cursor-click = pointer
 eursor-scroll = ns-resize
 
-[bar/bar2]
-;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
-height = 32
-;offset-x = 1%
-;offset-y = 1%
-radius = 0.0
-fixed-center = true
-
-background = ${colors-dracula.background}
-foreground = ${colors-dracula.foreground}
-
-line-size = 4 
-line-color = ${colors-dracula.purple}
-
-border-size = 0
-
-padding-left = 0
-padding-right = 1
-
-module-margin-left = 1
-module-margin-right = 1
-
-font-0 = Droid Sans Mono:style=Regular:pixelsize=10;2
-# font-1 = Font Awesome 5 Brands Regular:style=Regular:pixelsize=12;2
-font-1 = unifont:fontformat=truetype:size=14:antialias=false;2
-font-2 = siji:style=Regular:pixelsize=24;2
-font-3 = Font Awesome 5 Free:pixelsize=12;2
-font-4 = Font Awesome 5 Free Solid:pixelsize=12;2
-font-5 = Font Awesome 5 Brands:pixelsize=12;2
-font-6 = "Roboto:pixelsize=26;2" 
-
-modules-left = bspwm xwindow 
-modules-center =  filesystem pulseaudio date battery 
-modules-right = kernel 
-
-separator = |
-
-tray-position = right
-tray-padding= 2
-tray-transparent = 
-tray-background = ${colors-dracula.background}
-wm-restack = bspwm
-
-;wm-restack = i3
-
-;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
-
-cursor-click = pointer
-eursor-scroll = ns-resize
 
 [module/pacman-updates]
 type = custom/script
@@ -179,7 +122,7 @@ type = custom/script
 exec = uname -r
 tail = false
 interval = 1024
-format-prefix = "Kernel : "
+format-prefix = " " 
 format-foreground = ${colors-dracula.foreground}
 ;format-background = ${colors-dracula.purple}
 ;
@@ -210,7 +153,6 @@ label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
-
 pin-workspaces = true
 label-focused = %icon%
 label-focused-background = ${colors-dracula.purple}
@@ -459,26 +401,26 @@ format-charging-underline = #ffb52a
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = ""
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 =
+ramp-capacity-1 =
+ramp-capacity-2 =
 ramp-capacity-foreground = ${colors-dracula.yellow}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
 animation-charging-foreground = ${colors-dracula.yellow}
-animation-charging-framerate = 750
+animation-charging-framerate = 2000
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 =  
+animation-discharging-1 = 
+animation-discharging-2 = 
 animation-discharging-foreground = ${colors-dracula.yellow}
-animation-discharging-framerate = 750
+animation-discharging-framerate = 2000
 
 [module/temperature]
 type = internal/temperature
