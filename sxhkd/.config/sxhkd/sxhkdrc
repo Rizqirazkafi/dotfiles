@@ -18,7 +18,8 @@ super + Escape
 	pkill -USR1 -x sxhkd
 # screenshot
 Print
-    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+#    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
+    flameshot screen -p ~/Pictures/screenshot -c
 
 super + Print
     xfce4-screenshooter
