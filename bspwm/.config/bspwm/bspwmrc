@@ -13,6 +13,7 @@ nm-applet &
 pamac-tray &
 xfce4-power-manager &
 blueberry-tray &
+flameshot &
 #volumeicon &
 $HOME/.config/polybar/launch.sh
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
@@ -32,6 +33,7 @@ bspc config active_border_color "#ff79c6"
 bspc config focused_border_color "#bd93f9"
 bspc config presel_feedback_color "#6272a4"
 
+bspc rule -a Zathura state=gapless_monocle 
 bspc rule -a Gimp desktop='^4' state=gapless_monocle follow=on
 bspc rule -a zoom desktop='^5' state=floating 
 # bspc rule -a vivaldi-stable desktop='^2' 
