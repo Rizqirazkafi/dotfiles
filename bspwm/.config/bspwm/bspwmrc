@@ -1,30 +1,31 @@
 #! /bin/sh
 wmname compiz
-export _JAVA_AWT_WM_NONREPARENTING=1
+# export _JAVA_AWT_WM_NONREPARENTING=1
 pgrep -x sxhkd > /dev/null || sxhkd &
 #Autostart
-picom &
+# picom &
 exec --no-startup-id xfsettingsd &
 #killall variety &
 #variety &
 nitrogen --restore &
 #feh --bg-fill -randomize ~/Pictures/wallpaper/ * 
 nm-applet &
-pamac-tray &
-xfce4-power-manager &
-blueberry-tray &
+# pamac-tray &
+# xfce4-power-manager &
+# blueberry-tray &
 flameshot &
 #volumeicon &
 $HOME/.config/polybar/launch.sh
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 bspc monitor eDP -d I II III IV V 
-bspc monitor HDMI-A-0 -d I II III IV V 
-#for side in top right bottom left; do bspc config ${side}_monocle_padding -10; done
+# bspc monitor HDMI-A-0 -d I II III IV V 
+# for side in top right bottom left; do bspc config ${side}_monocle_padding -10; done
+for side in top ; do bspc config ${side}_monocle_padding 0; done
 bspc config border_width        4
 bspc config window_gap          3
 
-bspc config split_ratio          0.52
+bspc config split_ratio          0.50
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
