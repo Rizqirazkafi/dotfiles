@@ -6,7 +6,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 # picom &
 exec --no-startup-id xfsettingsd &
 #killall variety &
-#variety &
+# variety &
 nitrogen --restore &
 #feh --bg-fill -randomize ~/Pictures/wallpaper/ * 
 nm-applet &
@@ -21,9 +21,10 @@ $HOME/.config/polybar/launch.sh
 bspc monitor eDP -d I II III IV V 
 # bspc monitor HDMI-A-0 -d I II III IV V 
 # for side in top right bottom left; do bspc config ${side}_monocle_padding -10; done
+# Remove top padding in monocle mode
 for side in top ; do bspc config ${side}_monocle_padding 0; done
 bspc config border_width        4
-bspc config window_gap          3
+bspc config window_gap          8
 
 bspc config split_ratio          0.50
 bspc config borderless_monocle   true
