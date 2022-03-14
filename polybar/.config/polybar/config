@@ -53,7 +53,7 @@ fixed-center = true
 background = ${colors-dracula.background}
 foreground = ${colors-dracula.foreground}
 
-line-size = 4
+line-size = 6
 line-color = ${colors-dracula.purple}
 
 border-size = 0
@@ -62,18 +62,21 @@ padding-left = 1
 padding-right = 1
 
 module-margin-left = 1
-module-margin-right = 1
+module-margin-right = 0
 
 font-0 = "Droid Sans Mono:style=Regular:pixelsize=10;2"
 # font-1 = Font Awesome 5 Brands Regular:style=Regular:pixelsize=12;2
 font-1 = "unifont:fontformat=truetype:size=14:antialias=false;2'
-font-2 = "siji:style=Regular:pixelsize=24;2"
+font-2 = "siji:style=Regular:pixelsize=28;2"
 font-3 = "Font Awesome 6 Free:pixelsize=12;2"
 font-4 = "Font Awesome 6 Free Solid:pixelsize=12;2"
-font-5 = "Font Awesome 6 Brands:pixelsize=12;2"
+font-5 = "Font Awesome 6 Brands:pixelsize=14;2"
 font-6 = "Roboto:pixelsize=26;2"
-font-7 = "Hack Nerd Font:style=Regular;size=20;3"
-modules-left = archlinux bspwm xwindow 
+font-7 = "Hack Nerd Font Mono:style=Regular:size=12;2"
+font-8 = "icomoon:style=Regular:pixelsize=24;5"
+font-9 = "Hack Nerd Font Mono:style=Regular:size=32;5"
+
+modules-left = archlinux  bspwm xwindow 
 modules-center = date filesystem pulseaudio battery    
 modules-right = kernel 
 
@@ -99,9 +102,10 @@ eursor-scroll = ns-resize
 
 [module/archlinux]
 type= custom/text
-content-font= 8
-content = 
+;content-font= 8
+content = %{T9} %{T-}
 content-foreground = ${colors-dracula.orange}
+
 
 [module/pacman-updates]
 type = custom/script
