@@ -3,17 +3,14 @@
 ## Preview
 
 ### BSPWM
-![BSPWM](images/bspwm.jpg)
+![BSPWM](images/bspwm.png)
 
-1. Qtile
-    > **DO NOT USE THIS CONFIG!!**
-    > This config is still buggy due to incompatibility isues with V 0.18.0 
-2. vimrc
-3. bashrc
-4. zshrc
-5. Alacritty
-6. BSPWM
-7. sxhkd
-8. polybar
-9. Rofi
-10.Rofi wifi menu
+1. vimrc
+1. bashrc
+1. zshrc
+1. Alacritty
+1. BSPWM
+1. sxhkd
+1. polybar
+1. Rofi
+1. Rofi wifi menu
