@@ -4,7 +4,7 @@
 
 # terminal emulator
 super + Return
-	alacritty
+	alacritty 
 
 # program launcher
 super + space
@@ -19,7 +19,7 @@ super + Escape
 # screenshot
 Print
 #    scrot 'ArcoLinux-%Y-%m-%d-%s_screenshot_$wx$h.jpg' -e 'mv $f $$(xdg-user-dir PICTURES)'
-    flameshot screen -p ~/Pictures/screenshot -c
+    flameshot full -p ~/Pictures/screenshot -c
 
 super + Print
     xfce4-screenshooter
@@ -29,7 +29,17 @@ super + w
     firefox
 ## File Manager
 super + shift + Return
-    pcmanfm
+    dolphin
+## Arandr
+super + a
+    arandr
+## Wifi 
+super + F1
+    ~/.bin/rofi-wifi-menu
+
+## XFC4-appfinder
+super + F3
+    xfce4-appfinder
 ## Virtualbox
 super + F7
     virtualbox
@@ -41,7 +51,7 @@ super + F4
 
 
 ctrl + alt + c
-    code
+    codium
 ctrl + alt + v
     vivaldi-stable
 #
