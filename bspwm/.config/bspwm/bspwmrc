@@ -1,13 +1,17 @@
 #! /bin/sh
+if [[$(xrandr -q | grep 'HDMI-A-0 connected')]]; then
+    xrandr --output eDP --secondary --mode 1366x768 --rotate normal --output HDMI-A-0 --mode 1920x1080 --rotate normal --right-of eDP
+    nitrogen --head=1 --restore &
+fi
 wmname compiz
 # export _JAVA_AWT_WM_NONREPARENTING=1
 pgrep -x sxhkd > /dev/null || sxhkd &
 #Autostart
-# picom &
+picom --experimental-backends &
 exec --no-startup-id xfsettingsd &
 #killall variety &
 # variety &
-nitrogen --restore &
+nitrogen --restore --head=0&
 #feh --bg-fill -randomize ~/Pictures/wallpaper/ * 
 nm-applet &
 # pamac-tray &
@@ -19,6 +23,7 @@ $HOME/.config/polybar/launch.sh
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 bspc monitor eDP -d I II III IV V 
+bspc monitor HDMI-A-0 -d VI VII VIII 
 # bspc monitor HDMI-A-0 -d I II III IV V 
 # for side in top right bottom left; do bspc config ${side}_monocle_padding -10; done
 # Remove top padding in monocle mode
@@ -37,7 +42,12 @@ bspc config presel_feedback_color "#6272a4"
 
 bspc rule -a Zathura state=gapless_monocle 
 bspc rule -a Gimp desktop='^4' state=gapless_monocle follow=on
-bspc rule -a zoom desktop='^5' state=floating 
+bspc rule -a zoom desktop='^7' state=floating 
+# if [[$(xrandr -q | grep 'HDMI-A-0 connected')]]; then
+#     bspc rule -a zoom desktop='^7' state=floating 
+# else 
+#     bspc rule -a zoom desktop='^5' state=floating 
+# fi
 # bspc rule -a vivaldi-stable desktop='^2' 
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
@@ -45,4 +55,5 @@ bspc rule -a Screenkey manage=off
 bspc rule -a virtualbox desktop='^3' follow=on
 bspc rule -a rofi state=floating
 bspc rule -a teams desktop='^5' state=floating
-bspc rule -a obs desktop='^5' follow=on
+# bspc rule -a obs desktop='^5' follow=on
+
