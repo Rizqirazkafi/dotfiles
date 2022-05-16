@@ -6,7 +6,9 @@
 #export ZSH="/home/$USER/.oh-my-zsh"
 #installation via paru -S oh-my-zsh-git
 export ZSH=/usr/share/oh-my-zsh/
-
+export EDITOR=vim
+export VISUAL=vim
+export TERM="xterm-256color"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -316,7 +318,9 @@ alias xd="ls /usr/share/xsessions"
 alias bsc='vim ~/.config/bspwm/bspwmrc' #bspwm
 alias sxc='vim ~/.config/sxhkd/sxhkdrc' #sxhkd
 alias pbc='vim ~/.config/polybar/config' #polybar
-
+alias anime='ranger ~/mounted_disk/RAR/' # straight to weeb
+alias nvrc='nvim ~/.config/nvim/init.vim'
+alias vrc='vim ~/.vimrc'
 # Fix dualboot time
 alias fix_time='sudo timedatectl set-local-rtc 1 --adjust-system-clock && timedatectl'
 # VIM Aliases

@@ -28,7 +28,8 @@ secondary = #ffffff
 alert = #bd2c40
 
 [colors-dracula]
-background = #282a36
+;background = #282a36 ;true dracula color
+background = #002a2342
 current-line = #44475a
 selection = #44475a
 foreground = #f8f8f2
@@ -37,9 +38,69 @@ cyan = #8be9fd
 green = #50fa7b
 orange = #ffb86c
 pink = #ff79c6
-purple = #bd93f9
+;purple = #bd93f9
+purple = #df4dd6
 red = #ff5555
 yellow = #f1fa8c
+
+[bar/right]
+monitor = HDMI-A-0
+width = 100%
+height = 38
+; offset-x = 1%
+; offset-y = 1%
+radius = 0.0
+fixed-center = true
+
+background = ${colors-dracula.background}
+foreground = ${colors-dracula.foreground}
+
+line-size = 6
+line-color = ${colors-dracula.purple}
+
+border-size = 0
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 0
+
+font-0 = "Droid Sans Mono:style=Regular:pixelsize=10;2"
+# font-1 = Font Awesome 5 Brands Regular:style=Regular:pixelsize=12;2
+font-1 = "unifont:fontformat=truetype:size=14:antialias=false;2'
+font-2 = "siji:style=Regular:pixelsize=28;2"
+font-3 = "Font Awesome 6 Free:pixelsize=12;2"
+font-4 = "Font Awesome 6 Free Solid:pixelsize=12;2"
+font-5 = "Font Awesome 6 Brands:pixelsize=12:;2"
+font-6 = "Roboto:pixelsize=26;2"
+font-7 = "Hack Nerd Font Mono:style=Regular:size=12;2"
+font-8 = "icomoon:style=Regular:pixelsize=24;5"
+font-9 = "Hack Nerd Font Mono:style=Regular:size=32;5"
+
+modules-left = archlinux  bspwm xwindow 
+modules-center = date filesystem pulseaudio battery    
+modules-right = kernel 
+
+separator = |
+
+tray-position = right
+tray-padding= 2
+tray-transparent = 
+tray-background = ${colors-dracula.background}
+wm-restack = bspwm
+
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsptotal
+cursor-click = pointer
+eursor-scroll = ns-resize
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -104,8 +165,7 @@ eursor-scroll = ns-resize
 type= custom/text
 content-font= 8
 content =  
-content-foreground = ${colors-dracula.orange}
-
+content-foreground = #df4dd6
 
 [module/pacman-updates]
 type = custom/script
@@ -158,15 +218,16 @@ interval = 25
 mount-0 = /
 
 label-mounted =  %free%
+label-mounted-foreground =  ${colors-dracula.purple}
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-foreground = ${colors-dracula.purple}
 
 [module/bspwm]
 type = internal/bspwm
 pin-workspaces = true
 label-focused = %icon%
 label-focused-background = ${colors-dracula.purple}
-label-focused-underline= ${colors-dracula.pink}
+;label-focused-underline= ${colors-dracula.pink}
 label-focused-padding = 2
 
 label-occupied = %icon%
@@ -188,6 +249,10 @@ ws-icon-1 = II;
 ws-icon-2 = III;
 ws-icon-3 = IV;
 ws-icon-4 = V;
+ws-icon-5 = VI;6
+ws-icon-6 = VII;7
+ws-icon-7 = VIII;8
+
 
 
 [module/i3]
@@ -339,8 +404,8 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix =  
-format-prefix-foreground = ${colors-dracula.cyan}
-format-underline = ${colors-dracula.cyan}
+format-prefix-foreground = ${colors-dracula.purple}
+format-underline = ${colors-dracula.purple}
 
 label = %date% %time%
 
@@ -406,30 +471,33 @@ adapter = ADP1
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+;format-charging-underline = #ffb52a
+format-charging-underline = ${colors-dracula.purple}
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+;format-discharging-underline = ${self.format-charging-underline}
+format-discharging-underline = ${colors-dracula.purple}
 
 format-full-prefix = ""
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
+;format-full-underline = ${self.format-charging-underline}
+format-full-underline = ${colors-dracula.purple}
 
 ramp-capacity-0 =
 ramp-capacity-1 =
 ramp-capacity-2 =
-ramp-capacity-foreground = ${colors-dracula.yellow}
+ramp-capacity-foreground = ${colors-dracula.purple}
 
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
-animation-charging-foreground = ${colors-dracula.yellow}
+animation-charging-foreground = ${colors-dracula.purple}
 animation-charging-framerate = 2000
 
 animation-discharging-0 =  
 animation-discharging-1 = 
 animation-discharging-2 = 
-animation-discharging-foreground = ${colors-dracula.yellow}
+animation-discharging-foreground = ${colors-dracula.purple}
 animation-discharging-framerate = 2000
 
 [module/temperature]
@@ -477,7 +545,8 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-;pseudo-transparency = false
+compositing-background = source
+pseudo-transparency = true
 
 [global/wm]
 margin-top = 0

@@ -43,6 +43,7 @@ Plug 'valloric/youcompleteme'                       "Auto Complete for various p
 Plug 'townk/vim-autoclose'
 Plug 'dracula/vim', { 'as': 'dracula' }             "Dracula color scheme
 "Plug 'neoclide/coc-java'                            "Java autocompletion
+Plug 'vim-latex/vim-latex'
 call plug#end()
 
 let g:rainbow_active = 1
