@@ -165,7 +165,8 @@ eursor-scroll = ns-resize
 type= custom/text
 content-font= 8
 content =  
-content-foreground = #df4dd6
+;content-foreground = #df4dd6
+content-foreground = ${colors-dracula.purple}
 
 [module/pacman-updates]
 type = custom/script
@@ -249,9 +250,9 @@ ws-icon-1 = II;
 ws-icon-2 = III;
 ws-icon-3 = IV;
 ws-icon-4 = V;
-ws-icon-5 = VI;6
-ws-icon-6 = VII;7
-ws-icon-7 = VIII;8
+ws-icon-5 = VI;
+ws-icon-6 = VII;
+ws-icon-7 = VIII;
 
 
 
@@ -420,13 +421,20 @@ label-muted = ? muted
 label-muted-foreground = #666
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+;bar-volume-foreground-0 = #55aa55
+;bar-volume-foreground-1 = #55aa55
+;bar-volume-foreground-2 = #55aa55
+;bar-volume-foreground-3 = #55aa55
+;bar-volume-foreground-4 = #55aa55
+;bar-volume-foreground-5 = #f5a70a
+;bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = ${colors-dracula.purple}
+bar-volume-foreground-1 = ${colors-dracula.purple}
+bar-volume-foreground-2 = ${colors-dracula.purple}
+bar-volume-foreground-3 = ${colors-dracula.purple}
+bar-volume-foreground-4 = ${colors-dracula.purple}
+bar-volume-foreground-5 = ${colors-dracula.purple}
+bar-volume-foreground-6 = ${colors-dracula.purple}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2

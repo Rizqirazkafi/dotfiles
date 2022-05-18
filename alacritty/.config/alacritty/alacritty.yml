@@ -34,6 +34,7 @@ window:
   #
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
+  opacity : 0.5
   padding:
     x: 0
     y: 0
@@ -322,7 +323,7 @@ draw_bold_text_with_bright_colors: true
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background.opacity: 0.8
+window.opacity: 0.5
 # background_opacity: 0.80
 
 #selection:
