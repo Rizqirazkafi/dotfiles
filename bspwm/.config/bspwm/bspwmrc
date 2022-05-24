@@ -42,7 +42,7 @@ bspc config presel_feedback_color "#6272a4"
 
 bspc rule -a Zathura state=gapless_monocle 
 bspc rule -a Gimp desktop='^4' state=gapless_monocle follow=on
-bspc rule -a zoom desktop='^7' state=floating 
+bspc rule -a zoom desktop='^5' state=floating 
 # if [[$(xrandr -q | grep 'HDMI-A-0 connected')]]; then
 #     bspc rule -a zoom desktop='^7' state=floating 
 # else 
@@ -54,6 +54,7 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a virtualbox desktop='^3' follow=on
 bspc rule -a rofi state=floating
+bspc rule -a Xfce4-appfinder state=floating
 bspc rule -a teams desktop='^5' state=floating
 # bspc rule -a obs desktop='^5' follow=on
 
