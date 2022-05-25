@@ -133,9 +133,8 @@ font-3 = "Font Awesome 6 Free:pixelsize=12;2"
 font-4 = "Font Awesome 6 Free Solid:pixelsize=12;2"
 font-5 = "Font Awesome 6 Brands:pixelsize=12:;2"
 font-6 = "Roboto:pixelsize=26;2"
-font-7 = "Hack Nerd Font Mono:style=Regular:size=12;2"
-font-8 = "icomoon:style=Regular:pixelsize=24;5"
-font-9 = "Hack Nerd Font Mono:style=Regular:size=32;5"
+font-7 = "Hack Nerd Font Mono:style=Regular:size=38;10"
+font-8 = "icomoon:size=24;5"
 
 modules-left = archlinux  bspwm xwindow 
 modules-center = date filesystem pulseaudio battery    
@@ -144,7 +143,7 @@ modules-right = kernel
 separator = |
 
 tray-position = right
-tray-padding= 2
+tray-padding= 4
 tray-transparent = 
 tray-background = ${colors-dracula.background}
 wm-restack = bspwm
@@ -164,7 +163,7 @@ eursor-scroll = ns-resize
 [module/archlinux]
 type= custom/text
 content-font= 8
-content =  
+content = 
 ;content-foreground = #df4dd6
 content-foreground = ${colors-dracula.purple}
 
@@ -420,7 +419,7 @@ label-volume-foreground = ${root.foreground}
 label-muted = ? muted
 label-muted-foreground = #666
 
-bar-volume-width = 10
+bar-volume-width = 5
 ;bar-volume-foreground-0 = #55aa55
 ;bar-volume-foreground-1 = #55aa55
 ;bar-volume-foreground-2 = #55aa55
@@ -438,9 +437,9 @@ bar-volume-foreground-6 = ${colors-dracula.purple}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 2
-bar-volume-fill = ─
+bar-volume-fill = *
 bar-volume-fill-font = 2
-bar-volume-empty = ─
+bar-volume-empty = *
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
