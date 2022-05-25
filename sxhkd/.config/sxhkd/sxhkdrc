@@ -64,7 +64,7 @@ super + alt + {q,r}
 
 # Arcolinux Logout
 super + {x}
-    arcolinux-logout
+    archlinux-logout
 # close and kill
 super + q
 	bspc node -{c}
