@@ -39,7 +39,7 @@ Plug 'https://github.com/preservim/tagbar' " tagbar for code navigation
 Plug 'somini/vim-autoclose'
 Plug 'dracula/vim', { 'as': 'dracula' }             "Dracula color scheme
 Plug 'tribela/vim-transparent'
-Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'} "CHADTree 
+"Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'} "CHADTree 
 Plug 'mechatroner/rainbow_csv'              "CSV Highlight
 "Plug 'chrisbra/csv.vim'     "CSV Table Generator {Plugin is too powerfull}
 call plug#end()
