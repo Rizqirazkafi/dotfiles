@@ -17,7 +17,7 @@ set incsearch
 set termguicolors
 set mouse=a
 filetype plugin indent on
-
+autocmd TermOpen * setlocal nonumber norelativenumber
 call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-unimpaired'
 Plug 'mattn/emmet-vim'
