@@ -2,6 +2,7 @@
 if [[$(xrandr -q | grep 'HDMI-A-0 connected')]]; then
     xrandr --output eDP --secondary --mode 1366x768 --rotate normal --output HDMI-A-0 --mode 1920x1080 --rotate normal --right-of eDP
     nitrogen --head=1 --restore &
+    bspc monitor HDMI-A-0 -d VI VII VIII 
 fi
 wmname compiz
 # export _JAVA_AWT_WM_NONREPARENTING=1
@@ -24,6 +25,8 @@ $HOME/.config/polybar/launch.sh
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 bspc monitor eDP -d I II III IV V 
 bspc monitor HDMI-A-0 -d VI VII VIII 
+    
+
 # bspc monitor HDMI-A-0 -d I II III IV V 
 # for side in top right bottom left; do bspc config ${side}_monocle_padding -10; done
 # Remove top padding in monocle mode
