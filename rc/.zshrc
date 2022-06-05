@@ -6,8 +6,8 @@
 #export ZSH="/home/$USER/.oh-my-zsh"
 #installation via paru -S oh-my-zsh-git
 export ZSH=/usr/share/oh-my-zsh/
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export TERM="xterm-256color"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -315,9 +315,9 @@ alias bls="betterlockscreen -u /usr/share/backgrounds/arcolinux/"
 alias xd="ls /usr/share/xsessions"
 
 # config files
-alias bsc='vim ~/.config/bspwm/bspwmrc' #bspwm
-alias sxc='vim ~/.config/sxhkd/sxhkdrc' #sxhkd
-alias pbc='vim ~/.config/polybar/config' #polybar
+alias bsc='$EDITOR ~/.config/bspwm/bspwmrc' #bspwm
+alias sxc='$EDITOR ~/.config/sxhkd/sxhkdrc' #sxhkd
+alias pbc='$EDITOR ~/.config/polybar/config' #polybar
 alias anime='ranger ~/mounted_disk/RAR/' # straight to weeb
 alias nvrc='nvim ~/.config/nvim/init.vim'
 alias vrc='vim ~/.vimrc'
