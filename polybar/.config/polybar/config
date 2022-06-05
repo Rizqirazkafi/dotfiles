@@ -77,7 +77,7 @@ font-6 = "Roboto:pixelsize=26;2"
 font-7 = "Hack Nerd Font Mono:style=Regular:size=16;2"
 font-8 = "Hack Nerd Font Mono:style=Regular:size=38;10"
 
-modules-left = archlinux  bspwm xwindow 
+modules-left = archlinux bspwm xwindow 
 modules-center = date filesystem pulseaudio battery    
 modules-right = kernel 
 
@@ -215,7 +215,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted =  %free%
+label-mounted = %free% Free
 label-mounted-foreground =  ${colors-dracula.purple}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors-dracula.purple}
@@ -406,8 +406,54 @@ format-prefix-foreground = ${colors-dracula.purple}
 format-underline = ${colors-dracula.purple}
 
 label = %date% %time%
-
 [module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = Vol: <label-volume>
+ramp-volume-foreground = ${colors-dracula.purple}
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels%
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels%
+label-muted = 🔇 muted
+label-muted-foreground = ${colors-dracula.purple}
+format-volume-foreground = ${colors-dracula.purple}
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+; Right and Middle click
+click-right = pavucontrol
+; click-middle =
+
+[module/pulseaudio-back]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
@@ -425,20 +471,20 @@ bar-volume-width = 5
 ;bar-volume-foreground-4 = #55aa55
 ;bar-volume-foreground-5 = #f5a70a
 ;bar-volume-foreground-6 = #ff5555
-bar-volume-foreground-0 = ${colors-dracula.purple}
-bar-volume-foreground-1 = ${colors-dracula.purple}
-bar-volume-foreground-2 = ${colors-dracula.purple}
-bar-volume-foreground-3 = ${colors-dracula.purple}
-bar-volume-foreground-4 = ${colors-dracula.purple}
-bar-volume-foreground-5 = ${colors-dracula.purple}
-bar-volume-foreground-6 = ${colors-dracula.purple}
-bar-volume-gradient = false
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = *
-bar-volume-fill-font = 2
-bar-volume-empty = *
-bar-volume-empty-font = 2
+;bar-volume-foreground-0 = ${colors-dracula.purple}
+;bar-volume-foreground-1 = ${colors-dracula.purple}
+;bar-volume-foreground-2 = ${colors-dracula.purple}
+;bar-volume-foreground-3 = ${colors-dracula.purple}
+;bar-volume-foreground-4 = ${colors-dracula.purple}
+;bar-volume-foreground-5 = ${colors-dracula.purple}
+;bar-volume-foreground-6 = ${colors-dracula.purple}
+;bar-volume-gradient = false
+;bar-volume-indicator = |
+;bar-volume-indicator-font = 2
+;bar-volume-fill = *
+;bar-volume-fill-font = 2
+;bar-volume-empty = *
+;bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/alsa]
