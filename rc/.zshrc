@@ -111,10 +111,7 @@ setopt GLOB_DOTS
 
 export HISTCONTROL=ignoreboth:erasedups
 
-# Make nano the default editor
 
-export EDITOR='nano'
-export VISUAL='nano'
 
 #PS1='[\u@\h \W]\$ '
 
@@ -129,7 +126,7 @@ fi
 alias p2="python2"
 alias p3="python3"
 #list
-alias ls='ls --color=auto'
+alias ls='ls -hN --color=auto --group-directories-first'
 alias la='ls -a'
 alias ll='ls -la'
 alias l='ls'
@@ -317,7 +314,7 @@ alias xd="ls /usr/share/xsessions"
 # config files
 alias bsc='$EDITOR ~/.config/bspwm/bspwmrc' #bspwm
 alias sxc='$EDITOR ~/.config/sxhkd/sxhkdrc' #sxhkd
-alias pbc='$EDITOR ~/.config/polybar/config' #polybar
+alias pbc='$EDITOR ~/.config/polybar/config.ini' #polybar
 alias anime='ranger ~/mounted_disk/RAR/' # straight to weeb
 alias nvrc='nvim ~/.config/nvim/init.vim'
 alias vrc='vim ~/.vimrc'
@@ -394,4 +391,8 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
+# FZF setup
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi

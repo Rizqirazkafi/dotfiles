@@ -95,8 +95,6 @@ super + ctrl + {m,x,y,z}
 #
 # Cycle Through layouts
 #
-super + ctrl + space
-    bsp-layout cycle --layouts tiled,fullscreen,tall,monocle,wide
 #
 # focus/swap
 #
@@ -169,7 +167,7 @@ super + {Left,Down,Up,Right}
 
 # cycle through layouts
 super + r
-    bsp-layout cycle --layouts tall,monocle,wide
+    bsp-layout next --layouts tall,monocle,wide
 # volume control
 XF86AudioLowerVolume
 	amixer -q set Master 5%-
@@ -186,10 +184,10 @@ XF86MonBrightnessUp
 
 # Media controll
 XF86AudioPlay
-    playerctl play-pause
+    playerctl -a play-pause
 XF86AudioNext
-    playerctl next
+    playerctl -a next
 XF86AudioPrev
-    playerctl previous
+    playerctl -a previous
 XF86AudioStop
-    playerctl stop
+    playerctl -a stop

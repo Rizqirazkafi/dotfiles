@@ -9,7 +9,7 @@ killall -q polybar
 echo "---" | tee -a /tmp/polybar1.log /tmp/polybar2.log
 polybar example 2>&1 | tee -a /tmp/polybar1.log & disown
 if [[ $(xrandr -q | grep 'HDMI-A-0 connected') ]]; then
-    polybar right &
+    polybar right 2>&1 | tee -a /tmp/polybar1.log & disown
 fi
 #polybar bar2 2>&1 | tee -a /tmp/polybar2.log & disown
 
