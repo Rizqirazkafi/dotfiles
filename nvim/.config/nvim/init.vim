@@ -39,6 +39,7 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " ctrl + n for multiple c
 Plug 'https://github.com/preservim/tagbar' " tagbar for code navigation
 Plug 'somini/vim-autoclose'
 Plug 'dracula/vim', { 'as': 'dracula' }             "Dracula color scheme
+Plug 'joshdick/onedark.vim'
 Plug 'tribela/vim-transparent'
 "Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'} "CHADTree 
 Plug 'mechatroner/rainbow_csv'              "CSV Highlight
@@ -52,9 +53,12 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-rooter'
+Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
+let g:indent_guides_enable_on_vim_startup = 1
 " Bracey Config
 let g:bracey_server_port = '8080'
+let g:bracey_browser_command = 'brave'
 " TSEnable
 au VimEnter * TSEnable highlight [{ft}]
 " au VimEnter * TSEnable indent [{ft}]
@@ -82,11 +86,12 @@ let g:vimtex_view_method = 'zathura'
 "             \ })
 " augroup END
 " Dracula colorscheme
-let g:lightline = {
-            \'colorscheme': 'onedark',
-            \}
-
-colorscheme dracula
+" let g:lightline = {
+"             \'colorscheme': 'one',
+"             \}
+" let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='onedark'
+colorscheme onedark
 " FZF search
 nnoremap <silent> <C-p> :Files<CR>
 " Rainbow parentheses

@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+notify-send "Getting list of available monitors..." 
+
+monitor-list-connected=$(xrandr -q | grep 'connected' | cut -d " " -f1)
+monitor-list-disconnected=$(xrandr -q | grep 'disconnected' | cut -d " " -f1)
+
