@@ -4,4 +4,4 @@ require("rizqirazkafi.set")
 require("lualine").setup()
 require("rizqirazkafi.remap")
 require("rizqirazkafi.coc")
-
+require("rizqirazkafi.treesitter")

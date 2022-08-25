@@ -22,7 +22,7 @@ Print
     flameshot full -p ~/Pictures/screenshot -c
 
 super + Print
-    xfce4-screenshooter
+    flameshot screen -p ~/Pictures/screenshot -c
 #Aplication launcher
 ## Firefox
 super + w
@@ -174,7 +174,7 @@ XF86AudioLowerVolume
 XF86AudioRaiseVolume
 	amixer -q set Master 5%+
 XF86AudioMute
-        amixer -q set Master toggle
+    amixer -q set Master toggle
 
 # brightness control
 XF86MonBrightnessDown

@@ -356,7 +356,6 @@ ex ()
 # fm6000
 #fm6000 -c blue -w
 # afetch
-afetch
 # reporting tools - install when not installed
 # install neofetch
 # neofetch

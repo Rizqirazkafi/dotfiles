@@ -12,7 +12,7 @@ else
     notify-send "Second monitor deattached!"
 fi
 wmname compiz
-# export _JAVA_AWT_WM_NONREPARENTING=1
+export _JAVA_AWT_WM_NONREPARENTING=1
 # pgrep -x sxhkd > /dev/null || sxhkd &
 sxhkd -c ~/.config/sxhkd/sxhkdrc &
 #Autostart
